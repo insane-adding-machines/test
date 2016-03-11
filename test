@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm units;
+gcc-5 -DUNIT_TEST -I ../../../iam/newlib/newlib/libc/sys/frosted/ -I . -I ./unit -L /usr/lib/x86_64-linux-gnu/ -pthread -lcheck -lcheck_pic -pthread -lrt -lm -lsubunit -o units units.c /usr/lib/x86_64-linux-gnu/libcheck.a && ./units
