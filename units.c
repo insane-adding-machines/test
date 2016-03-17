@@ -11,7 +11,8 @@
 #include <check_stdint.h>
 #include <check.h>
 #include "dirname.c"
-#include "unit_dirname.c"
+#include "pwd.c"
+#include "unit_libc.c"
 #include "stubs.c"
 #include "unit_stubs.c"
 
@@ -21,6 +22,9 @@ Suite *frosted_suite(void)
 
     TCase *libc = tcase_create("Libc");
     tcase_add_test(libc, test_dirname);
+    tcase_add_test(libc, test_basename);
+    tcase_add_test(libc, test_getpwnam);
+    tcase_add_test(libc, test_getpwuid);
     suite_add_tcase(s, libc);
 
 
